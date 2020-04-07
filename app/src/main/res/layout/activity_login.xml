@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/image_main_background"
     android:orientation="vertical"
-    tools:context=".ui.MainActivity">
+    tools:context=".view.activity.MainActivity">
 
 
     <com.alipay.mobile.antui.input.AUImageInputBox

@@ -1,6 +1,5 @@
-package com.ms.app.ui;
+package com.ms.app.view.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.ms.app.R;
