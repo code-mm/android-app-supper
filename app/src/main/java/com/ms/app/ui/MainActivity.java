@@ -5,7 +5,9 @@ import android.os.Bundle;
 
 import com.ms.app.R;
 
-public class MainActivity extends Activity {
+import org.ms.module.base.view.BaseActivity;
+
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
