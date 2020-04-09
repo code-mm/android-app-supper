@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.ms.app"
-        minSdkVersion 18
+        minSdkVersion 26
         targetSdkVersion 28
         versionCode 1
         versionName "1.0.0.0"
@@ -51,9 +51,8 @@ android {
 
     packagingOptions {
         exclude 'META-INF/io.netty.versions.properties'
+        exclude 'META-INF/INDEX.LIST'
     }
-
-
 }
 
 
@@ -74,14 +73,18 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
 
     implementation "org.ms:sdk-module-supper:latest"
+    implementation "com.ms:app-common:latest"
 
 
     implementation group: 'io.rsocket', name: 'rsocket-core', version: '1.0.0-RC6'
     implementation group: 'io.rsocket', name: 'rsocket-transport-netty', version: '1.0.0-RC6'
 
 
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
 
-
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 }
 
 

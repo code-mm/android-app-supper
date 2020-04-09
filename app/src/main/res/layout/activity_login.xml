@@ -29,6 +29,7 @@
 
 
     <com.alipay.mobile.antui.basic.AUButton
+        android:id="@+id/auButtonLogin"
         style="@style/mainButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="60dp"
