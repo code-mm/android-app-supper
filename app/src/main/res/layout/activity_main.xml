@@ -1,16 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/image_main_background"
-    android:orientation="vertical"
+    android:background="#ffffff"
     tools:context=".view.activity.MainActivity">
 
 
+    <FrameLayout
+        android:id="@+id/frameLayoutFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/auLinearLayoutBottonNavigation" />
 
 
+    <com.alipay.mobile.antui.basic.AULinearLayout
+        android:id="@+id/auLinearLayoutBottonNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.alipay.mobile.antui.bar.AUTabBarItem
+            android:id="@+id/auTabBarItemMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:text="消息"
+            app:textColor="@color/color_update_333333"
+            app:topIconSid="@drawable/tab_bar_message" />
+
+        <com.alipay.mobile.antui.bar.AUTabBarItem
+            android:id="@+id/auTabBarItemTool"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:text="工具"
+            app:textColor="@color/color_update_333333"
+            app:topIconSid="@drawable/tab_bar_tool" />
 
 
-</LinearLayout>
+        <com.alipay.mobile.antui.bar.AUTabBarItem
+            android:id="@+id/auTabBarItemShoppingCart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:text="工具"
+            app:textColor="@color/color_update_333333"
+            app:topIconSid="@drawable/tab_bar_shopping_cart" />
+
+
+        <com.alipay.mobile.antui.bar.AUTabBarItem
+            android:id="@+id/auTabBarItemMy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:text="工具"
+            app:textColor="@color/color_update_333333"
+            app:topIconSid="@drawable/tab_bar_my" />
+
+    </com.alipay.mobile.antui.basic.AULinearLayout>
+
+</RelativeLayout>

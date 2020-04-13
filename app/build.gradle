@@ -59,22 +59,22 @@ android {
         DevLocal {
             applicationId "com.bdlbsc.shopadmin_android.production"
             manifestPlaceholders = [app_name: "开发版-supper-app"]
-            manifestPlaceholders = ["BASE_SERVER": "http://localhost:8000/user"]
-            resValue("string", "base_url", "http://192.168.1.1/")
+            manifestPlaceholders = ["BASE_SERVER": "http://192.168.1.108:8000/2016-08-15/proxy/android-app/service"]
+            resValue("string", "author", "maohuawei")
         }
 
         DevRemote {
             applicationId "com.bdlbsc.shopadmin_android.production"
             manifestPlaceholders = [app_name: "开发版-supper-app"]
-            manifestPlaceholders = ["BASE_SERVER": "http://localhost:8000/user"]
-            resValue("string", "base_url", "http://192.168.1.1/")
+            manifestPlaceholders = ["BASE_SERVER": "https://1265563782321795.cn-beijing.fc.aliyuncs.com/2016-08-15/proxy/android-app/service/"]
+            resValue("string", "author", "maohuawei")
         }
 
         QA {
             applicationId "com.bdlbsc.shopadmin_android.production"
             manifestPlaceholders = [app_name: "测试版-supper-app"]
-            manifestPlaceholders = ["BASE_SERVER": "http://localhost:8000/user"]
-            resValue("string", "base_url", "http://192.168.1.1/")
+            manifestPlaceholders = ["BASE_SERVER": "https://1265563782321795.cn-beijing.fc.aliyuncs.com/2016-08-15/proxy/android-app/service/"]
+            resValue("string", "author", "maohuawei")
         }
     }
 
@@ -114,7 +114,7 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
 
 
-    implementation "org.ms:sdk-module-supper:latest"
+    implementation "org.ms:android-sdk-module-supper:latest"
     implementation "com.bdlbsc:rsocket-request-response-common:latest"
     implementation 'com.bdlbsc:fun-bff-request-response-common:latest'
 

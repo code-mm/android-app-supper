@@ -1,6 +1,7 @@
 package com.ms.app.view.activity;
 
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,12 +14,13 @@ import com.ms.app.presenter.LoginActivityPresenter;
 import com.ms.app.rsocket.RSocketCallBack;
 
 import org.ms.module.base.view.BaseActivity;
+import org.ms.module.base.view.BaseAppCompatActivity;
 import org.ms.module.supper.client.Modules;
 
 import io.rsocket.RSocket;
 
 @RequiresApi(api = Build.VERSION_CODES.N)
-public class LoginActivity extends BaseActivity<LoginActivityPresenter> implements ILoginActivity {
+public class LoginActivity extends BaseAppCompatActivity<LoginActivityPresenter> implements ILoginActivity {
 
 
     private static final String TAG = "LoginActivity";
@@ -30,44 +32,24 @@ public class LoginActivity extends BaseActivity<LoginActivityPresenter> implemen
         return R.layout.activity_login;
     }
 
+    @Override
+    protected boolean isFullScreen() {
+        return true;
+    }
+
 
     @Override
     protected void initView() {
-        super.initView();
-        auButtonLogin = findViewById(R.id.auButtonLogin);
-
-
-        auButtonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
 
     }
-
-    private RSocket rSocket;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        showDialog();
 
+        startActivity(new Intent(this, MainActivity.class));
 
-        UserSdk.getInstance().setHost("192.168.0.43").setPort(38000).connect(new RSocketCallBack() {
-            @Override
-            public void onSuccess(Object o) {
-
-                Modules.getUtilsModule().getToastUtils().show("连接成功");
-            }
-
-            @Override
-            public void onFailure(Object o) {
-                super.onFailure(o);
-            }
-        });
     }
 
     @Override

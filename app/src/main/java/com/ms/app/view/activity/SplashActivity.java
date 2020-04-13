@@ -7,13 +7,14 @@ import android.os.SystemClock;
 import com.ms.app.R;
 
 import org.ms.module.base.view.BaseActivity;
+import org.ms.module.base.view.BaseAppCompatActivity;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends BaseAppCompatActivity {
     private static final String TAG = "SplashActivity";
 
     @Override
@@ -22,10 +23,20 @@ public class SplashActivity extends BaseActivity {
     }
 
     @Override
+    protected boolean isFullScreen() {
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+        finish();
+
+
         Observable.create((ObservableOnSubscribe<Integer>) e -> {
-            for (int i = 2; i > -1; i--) {
+            for (int i = 1; i > -1; i--) {
                 e.onNext(i);
                 SystemClock.sleep(1000);
             }
@@ -33,9 +44,13 @@ public class SplashActivity extends BaseActivity {
                 .subscribeOn(Schedulers.io())
                 .subscribe(integer -> {
                     if (integer == 0) {
-                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-                        finish();
+
                     }
                 });
+    }
+
+    @Override
+    protected void initView() {
+
     }
 }
