@@ -59,7 +59,7 @@ android {
         DevLocal {
             applicationId "com.bdlbsc.shopadmin_android.production"
             manifestPlaceholders = [app_name: "开发版-supper-app"]
-            manifestPlaceholders = ["BASE_SERVER": "http://192.168.1.108:8000/2016-08-15/proxy/android-app/service"]
+            manifestPlaceholders = ["BASE_SERVER": "http://localhost:8000/2016-08-15/proxy/android-app/service"]
             resValue("string", "author", "maohuawei")
         }
 
