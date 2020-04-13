@@ -56,13 +56,25 @@ android {
 
     productFlavors {
 
-        dev {
+        DevLocal {
             applicationId "com.bdlbsc.shopadmin_android.production"
-            manifestPlaceholders = [app_name: "北斗数睿服务平台"]
+            manifestPlaceholders = [app_name: "开发版-supper-app"]
             manifestPlaceholders = ["BASE_SERVER": "http://localhost:8000/user"]
             resValue("string", "base_url", "http://192.168.1.1/")
+        }
 
+        DevRemote {
+            applicationId "com.bdlbsc.shopadmin_android.production"
+            manifestPlaceholders = [app_name: "开发版-supper-app"]
+            manifestPlaceholders = ["BASE_SERVER": "http://localhost:8000/user"]
+            resValue("string", "base_url", "http://192.168.1.1/")
+        }
 
+        QA {
+            applicationId "com.bdlbsc.shopadmin_android.production"
+            manifestPlaceholders = [app_name: "测试版-supper-app"]
+            manifestPlaceholders = ["BASE_SERVER": "http://localhost:8000/user"]
+            resValue("string", "base_url", "http://192.168.1.1/")
         }
     }
 
@@ -88,6 +100,12 @@ dependencies {
     implementation 'com.mpaas.android:antui'
     implementation 'com.mpaas.android:nebula'
 
+    implementation 'com.mpaas.android:support'
+    implementation 'com.mpaas.android:utdid'
+    implementation 'com.mpaas.android:upgrade'
+    implementation 'com.mpaas.android:scan'
+    implementation 'com.mpaas.android:storage'
+    implementation 'com.mpaas.android:logging'
 
     implementation group: 'joda-time', name: 'joda-time', version: '2.10.5'
     implementation "com.squareup.okhttp3:logging-interceptor:3.7.0"
@@ -110,16 +128,7 @@ dependencies {
 
     testCompileOnly 'org.projectlombok:lombok:1.18.12'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
-
-
-    implementation 'com.mpaas.android:support'
-    implementation 'com.mpaas.android:utdid'
-    implementation 'com.mpaas.android:upgrade'
-    implementation 'com.mpaas.android:scan'
-    implementation 'com.mpaas.android:storage'
-    implementation 'com.mpaas.android:logging'
 }
-
 
 uploadArchives {
     repositories {
@@ -128,5 +137,5 @@ uploadArchives {
 }
 
 def buildTime() {
-    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("GMT+8"))
+    return new Date().format("yyyy-MM-dd-hh-ss", TimeZone.getTimeZone("GMT+8"))
 }

@@ -1,13 +1,10 @@
 package com.ms.app.rsocket;
 
-import com.ms.common.route.ROUTES;
-import com.ms.common.user.login.UserLoginUsernameRequest;
 
 import org.ms.module.supper.client.Modules;
 
 import java.time.Duration;
 
-import io.netty.buffer.Unpooled;
 import io.rsocket.RSocket;
 import io.rsocket.RSocketFactory;
 import io.rsocket.frame.decoder.PayloadDecoder;
@@ -118,31 +115,31 @@ public class UserSdk {
     }
 
 
-    public void login(UserLoginUsernameRequest request) {
-        if (open) {
-            String data = Modules.getUtilsModule().getGsonUtils().toJson(request);
-            rSocket.requestResponse(DefaultPayload.create(Unpooled.wrappedBuffer(data.getBytes()), RSocketRouteUtils.routeByteBuf(ROUTES.USER_LOGIN_USERNAME)));
-        } else {
-            connect(new RSocketCallBack() {
-                @Override
-                public void onSuccess(Object o) {
-                    login(request);
-                }
-
-                @Override
-                public void onFailure(Object o) {
-                    if (connect_count < reconnect) {
-                        connect(this);
-                    }
-                    connect_count++;
-                }
-
-                @Override
-                public void onException(Throwable e) {
-                    connect(this);
-                    connect_count++;
-                }
-            });
-        }
-    }
+//    public void login(UserLoginUsernameRequest request) {
+//        if (open) {
+//            String data = Modules.getUtilsModule().getGsonUtils().toJson(request);
+//            rSocket.requestResponse(DefaultPayload.create(Unpooled.wrappedBuffer(data.getBytes()), RSocketRouteUtils.routeByteBuf(ROUTES.USER_LOGIN_USERNAME)));
+//        } else {
+//            connect(new RSocketCallBack() {
+//                @Override
+//                public void onSuccess(Object o) {
+//                    login(request);
+//                }
+//
+//                @Override
+//                public void onFailure(Object o) {
+//                    if (connect_count < reconnect) {
+//                        connect(this);
+//                    }
+//                    connect_count++;
+//                }
+//
+//                @Override
+//                public void onException(Throwable e) {
+//                    connect(this);
+//                    connect_count++;
+//                }
+//            });
+//        }
+//    }
 }
