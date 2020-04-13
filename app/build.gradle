@@ -87,6 +87,10 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 
 
+
+    implementation 'com.bdlbsc:fun-bff-request-response-common:latest'
+
+
     implementation 'com.mpaas.android:support'
     implementation 'com.mpaas.android:utdid'
     implementation 'com.mpaas.android:upgrade'
