@@ -1,7 +1,8 @@
 package com.ms.app.view.activity;
 
+import com.ms.app.rsocket.RSocketCallBack;
+import com.ms.app.rsocket.RSocketRouteUtils;
 import com.ms.common.route.ROUTES;
-import com.ms.common.user.User;
 import com.ms.common.user.login.UserLoginUsernameRequest;
 
 import org.ms.module.supper.client.Modules;
@@ -9,7 +10,6 @@ import org.ms.module.supper.client.Modules;
 import java.time.Duration;
 
 import io.netty.buffer.Unpooled;
-import io.rsocket.Payload;
 import io.rsocket.RSocket;
 import io.rsocket.RSocketFactory;
 import io.rsocket.frame.decoder.PayloadDecoder;
@@ -116,25 +116,7 @@ public class UserSdk {
                     connect_count++;
                 }
 
-                @Override
-                public void onCancel(Object o) {
 
-                }
-
-                @Override
-                public void onStart(Object o) {
-
-                }
-
-                @Override
-                public void onUnknown(Object o) {
-
-                }
-
-                @Override
-                public void onException(Object o) {
-
-                }
 
                 @Override
                 public void onChange(Object o) {

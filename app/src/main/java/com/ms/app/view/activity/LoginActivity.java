@@ -5,33 +5,17 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
-import android.util.Log;
 import android.view.View;
 
 import com.alipay.mobile.antui.basic.AUButton;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.ms.app.R;
 import com.ms.app.presenter.LoginActivityPresenter;
-
-import com.ms.common.base.BaseResponse;
-import com.ms.common.error.ErrorResponse;
-import com.ms.common.user.login.UserLoginUsernameRequest;
-import com.ms.common.user.login.UserLoginUsernameResponse;
+import com.ms.app.rsocket.RSocketCallBack;
 
 import org.ms.module.base.view.BaseActivity;
 import org.ms.module.supper.client.Modules;
-import org.ms.module.utils.gson.GsonUtils;
 
-import java.lang.reflect.Type;
-
-import io.netty.buffer.Unpooled;
 import io.rsocket.RSocket;
-import io.rsocket.RSocketFactory;
-import io.rsocket.frame.decoder.PayloadDecoder;
-import io.rsocket.transport.netty.client.TcpClientTransport;
-import io.rsocket.util.DefaultPayload;
-import reactor.core.publisher.Mono;
 
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class LoginActivity extends BaseActivity<LoginActivityPresenter> implements ILoginActivity {

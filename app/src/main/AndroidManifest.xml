@@ -52,6 +52,13 @@
         android:icon="@drawable/svg_icon"
         android:label="@string/app_name"
         android:theme="@style/AppThemeNew">
+
+
+        <meta-data
+            android:name="com.bdlbsc.base.server"
+            android:value="${BASE_SERVER}"></meta-data>
+
+
         <activity android:name=".view.activity.MainActivity"></activity>
         <activity android:name=".view.activity.LoginActivity"></activity>
         <activity android:name=".view.activity.SplashActivity">
