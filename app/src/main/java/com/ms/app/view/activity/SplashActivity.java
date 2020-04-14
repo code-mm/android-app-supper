@@ -37,16 +37,19 @@ public class SplashActivity extends BaseAppCompatActivity {
         Modules.getControlSwitch().setLogOut(true);
         Modules.getControlSwitch().setPrintStackTrace(true);
         Modules.getControlSwitch().setRequestLog(true);
+        Modules.getRequestSettingModule().setRequestLogOut(true);
+        Modules.getRequestSettingModule().setConnectTimeout(30);
+        Modules.getRequestSettingModule().setReadTimeout(30);
+        Modules.getRequestSettingModule().setWriteTimeout(30);
 
         String url = Modules.getUtilsModule().getApkUtils().getMeta("com.bdlbsc.base.server");
 
 
-        Modules.getApiModule().setBaseUrl(url);
+        Modules.getApiModule().setBaseUrls(url);
 
 
         startActivity(new Intent(SplashActivity.this, LoginActivity.class));
         finish();
-
 
 
         Observable.create((ObservableOnSubscribe<Integer>) e -> {
