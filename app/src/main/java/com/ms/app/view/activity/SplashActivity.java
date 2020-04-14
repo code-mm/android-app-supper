@@ -8,6 +8,7 @@ import com.ms.app.R;
 
 import org.ms.module.base.view.BaseActivity;
 import org.ms.module.base.view.BaseAppCompatActivity;
+import org.ms.module.supper.client.Modules;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableOnSubscribe;
@@ -29,10 +30,23 @@ public class SplashActivity extends BaseAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
+
+        Modules.getControlSwitch().setLogOut(true);
+        Modules.getControlSwitch().setPrintStackTrace(true);
+        Modules.getControlSwitch().setRequestLog(true);
+
+        String url = Modules.getUtilsModule().getApkUtils().getMeta("com.bdlbsc.base.server");
+
+
+        Modules.getApiModule().setBaseUrl(url);
+
 
         startActivity(new Intent(SplashActivity.this, LoginActivity.class));
         finish();
+
 
 
         Observable.create((ObservableOnSubscribe<Integer>) e -> {

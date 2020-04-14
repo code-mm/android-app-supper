@@ -12,7 +12,7 @@ import com.ms.app.presenter.fragment.ToolFragmentPresenter;
 import org.ms.module.base.view.BaseFragment;
 import org.ms.module.supper.client.Modules;
 
-public class ToolFragment extends BaseFragment<ToolFragmentPresenter> implements View.OnClickListener ,IToolFragment{
+public class ToolFragment extends BaseFragment<ToolFragmentPresenter> implements View.OnClickListener, IToolFragment {
 
 
     private RecyclerView recyclerViewApplets;
@@ -74,10 +74,13 @@ public class ToolFragment extends BaseFragment<ToolFragmentPresenter> implements
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        requestApplets();
     }
 
     @Override
     public void requestApplets() {
+
+        presenter.requestApplets();
 
     }
 
