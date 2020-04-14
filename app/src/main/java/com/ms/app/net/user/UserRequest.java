@@ -46,7 +46,7 @@ public class UserRequest implements IUserRequestServer {
     public Observable<UserTokenCheckResponse> userTokenCheck(UserTokenCheckRequest request) {
         return Observable.create(emitter -> {
             String requestBody = Modules.getUtilsModule().getGsonUtils().toJson(request);
-            Response response = Modules.getRequestModule().requestBody(null, Modules.getApiModule().getBaseUrl() + USERAPI.LOGIN_PHONENUMBER, requestBody);
+            Response response = Modules.getRequestModule().requestBody(null, Modules.getApiModule().getBaseUrl() + USERAPI.TOKEN_CHECK, requestBody);
             int code = response.code;
             if (code == 200) {
                 String body = response.body;
@@ -66,7 +66,7 @@ public class UserRequest implements IUserRequestServer {
     public Observable<UserTokenRefreshResponse> userTokenRefresh(UserTokenCheckRequest request) {
         return Observable.create(emitter -> {
             String requestBody = Modules.getUtilsModule().getGsonUtils().toJson(request);
-            Response response = Modules.getRequestModule().requestBody(null, Modules.getApiModule().getBaseUrl() + USERAPI.LOGIN_PHONENUMBER, requestBody);
+            Response response = Modules.getRequestModule().requestBody(null, Modules.getApiModule().getBaseUrl() + USERAPI.TOKEN_REFRESH, requestBody);
             int code = response.code;
             if (code == 200) {
                 String body = response.body;
@@ -113,7 +113,7 @@ public class UserRequest implements IUserRequestServer {
     public Observable<UserLoginPhonenumberRequestVerificationCodeRequest> userLoginPhonenumberVerificationCode(UserLoginPhonenumberRequestVerificationCodeRequest request) {
         return Observable.create(emitter -> {
             String requestBody = Modules.getUtilsModule().getGsonUtils().toJson(request);
-            Response response = Modules.getRequestModule().requestBody(null, Modules.getApiModule().getBaseUrl() + USERAPI.LOGIN_PHONENUMBER, requestBody);
+            Response response = Modules.getRequestModule().requestBody(null, Modules.getApiModule().getBaseUrl() + USERAPI.LOGIN_PHONENUMBER_REQUEST_VERIFICATIONCODE, requestBody);
             int code = response.code;
             if (code == 200) {
                 String body = response.body;
@@ -163,7 +163,7 @@ public class UserRequest implements IUserRequestServer {
     public Observable<UserRegisteredUsernameResponse> userRegisteredUsername(UserRegisteredUsernameRequest request) {
         return Observable.create(emitter -> {
             String requestBody = Modules.getUtilsModule().getGsonUtils().toJson(request);
-            Response response = Modules.getRequestModule().requestBody(null, Modules.getApiModule().getBaseUrl() + USERAPI.LOGIN_PHONENUMBER, requestBody);
+            Response response = Modules.getRequestModule().requestBody(null, Modules.getApiModule().getBaseUrl() + USERAPI.REGISTERED_USERNAME, requestBody);
             int code = response.code;
             if (code == 200) {
                 String body = response.body;
@@ -188,7 +188,7 @@ public class UserRequest implements IUserRequestServer {
     public Observable<UserRegisteredPhonenumberRequestVerifocationCodeRequest> userRegisteredPhoneVerifocationCode(UserRegisteredPhonenumberRequestVerifocationCodeRequest request) {
         return Observable.create(emitter -> {
             String requestBody = Modules.getUtilsModule().getGsonUtils().toJson(request);
-            Response response = Modules.getRequestModule().requestBody(null, Modules.getApiModule().getBaseUrl() + USERAPI.LOGIN_PHONENUMBER, requestBody);
+            Response response = Modules.getRequestModule().requestBody(null, Modules.getApiModule().getBaseUrl() + USERAPI.REGISTERED_PHONENUMBER_REQUEST_VERIFICATIONCODE, requestBody);
             int code = response.code;
             if (code == 200) {
                 String body = response.body;
@@ -213,7 +213,7 @@ public class UserRequest implements IUserRequestServer {
     public Observable<UserRegisteredPhonenumberResponse> userRegisteredPhone(UserRegisteredPhonenumberRequest request) {
         return Observable.create(emitter -> {
             String requestBody = Modules.getUtilsModule().getGsonUtils().toJson(request);
-            Response response = Modules.getRequestModule().requestBody(null, Modules.getApiModule().getBaseUrl() + USERAPI.LOGIN_PHONENUMBER, requestBody);
+            Response response = Modules.getRequestModule().requestBody(null, Modules.getApiModule().getBaseUrl() + USERAPI.REGISTERED_PHONENUMBER, requestBody);
             int code = response.code;
             if (code == 200) {
                 String body = response.body;

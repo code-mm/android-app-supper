@@ -1,11 +1,10 @@
-package com.ms.app.presenter;
+package com.ms.app.presenter.activity;
 
-import com.ms.app.model.LoginActivityModel;
+import com.ms.app.model.activity.LoginActivityModel;
 import com.ms.app.view.activity.ILoginActivity;
 import com.ms.app.view.activity.LoginActivity;
 
 import org.ms.module.base.presenter.BasePresenter;
-import org.ms.module.supper.client.Modules;
 
 public class LoginActivityPresenter extends BasePresenter<LoginActivityModel, LoginActivity> implements ILoginActivity {
 

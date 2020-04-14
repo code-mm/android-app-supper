@@ -7,16 +7,22 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.ms.app.R;
+import com.ms.app.presenter.fragment.ToolFragmentPresenter;
 
 import org.ms.module.base.view.BaseFragment;
 import org.ms.module.supper.client.Modules;
 
-public class ToolFragment extends BaseFragment implements View.OnClickListener {
+public class ToolFragment extends BaseFragment<ToolFragmentPresenter> implements View.OnClickListener ,IToolFragment{
 
 
     private RecyclerView recyclerViewApplets;
     private ImageView imageViewSearch;
 
+
+    @Override
+    protected ToolFragmentPresenter initPresenter() {
+        return new ToolFragmentPresenter(this);
+    }
 
     @Override
     protected void initView() {
@@ -68,12 +74,15 @@ public class ToolFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+    }
 
+    @Override
+    public void requestApplets() {
 
+    }
 
-
-
-
+    @Override
+    public void onRequestAppletsResultCallBack() {
 
     }
 }

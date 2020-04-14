@@ -36,6 +36,4 @@ public class MessageFragment extends BaseFragment {
         fragment.setArguments(args);
         return fragment;
     }
-
-
 }

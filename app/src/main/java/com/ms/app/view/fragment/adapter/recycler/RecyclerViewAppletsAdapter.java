@@ -15,15 +15,18 @@ public class RecyclerViewAppletsAdapter extends RecyclerView.Adapter<RecyclerVie
     private Context context;
 
 
+    public RecyclerViewAppletsAdapter(Context context) {
+        this.context = context;
+    }
+
+
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new Holder(LayoutInflater.from(context).inflate(R.layout.item_recyclerview_applets_adapter));
+        return new Holder(LayoutInflater.from(context).inflate(R.layout.item_recyclerview_applets_adapter,parent));
     }
 
     @Override
     public void onBindViewHolder(Holder holder, int position) {
-
-
 
 
     }

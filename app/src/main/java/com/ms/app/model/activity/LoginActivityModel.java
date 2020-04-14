@@ -1,17 +1,16 @@
-package com.ms.app.model;
+package com.ms.app.model.activity;
 
 import com.bdlbsc.common.user.UserLoginUsernameRequest;
 import com.bdlbsc.common.user.UserLoginUsernameResponse;
 import com.ms.app.net.user.IUserRequestServer;
 import com.ms.app.net.user.UserRequest;
-import com.ms.app.presenter.LoginActivityPresenter;
+import com.ms.app.presenter.activity.LoginActivityPresenter;
 import com.ms.app.view.activity.ILoginActivity;
 
 import org.ms.module.base.module.BaseModel;
 import org.ms.module.supper.client.Modules;
 
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
