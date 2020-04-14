@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff">
+    android:background="#FFFFFF">
 
 
-    <TextView
-        android:textColor="#000"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="工具" />
+    <RelativeLayout
+        android:id="@+id/relativeLayoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/sourcehansanscn_medium"
+            android:text="智慧养老公共服务平台"
+            android:textColor="#ff000000"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imageViewSearch"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15.5dp"
+            android:src="@drawable/image_search" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutAd"
+        android:layout_below="@id/relativeLayoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewApplets"
+        android:layout_below="@id/relativeLayoutAd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>

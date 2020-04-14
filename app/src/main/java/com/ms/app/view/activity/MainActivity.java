@@ -1,9 +1,12 @@
 package com.ms.app.view.activity;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.alipay.mobile.antui.bar.AUTabBarItem;
@@ -17,6 +20,7 @@ import com.ms.app.view.fragment.ToolFragment;
 import org.ms.module.base.utils.RxView;
 import org.ms.module.base.view.BaseActivity;
 import org.ms.module.base.view.BaseAppCompatActivity;
+import org.ms.module.base.view.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,6 +101,13 @@ public class MainActivity extends BaseAppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.KITKAT)
+        {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
+
+
         fragments.clear();
         fragments.add(MessageFragment.newInstance());
         fragments.add(ToolFragment.newInstance());
@@ -110,6 +121,14 @@ public class MainActivity extends BaseAppCompatActivity implements View.OnClickL
 
 
         showFragment(fragments.get(0));
+    }
+
+
+    @Override
+    protected void setStatusBar() {
+
+
+
     }
 
     @Override

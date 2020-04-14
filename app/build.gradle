@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 apply plugin: 'com.alipay.apollo.baseline.config'
-
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
 
@@ -100,7 +101,6 @@ dependencies {
     implementation 'com.mpaas.android:antui'
     implementation 'com.mpaas.android:nebula'
 
-    implementation 'com.mpaas.android:support'
     implementation 'com.mpaas.android:utdid'
     implementation 'com.mpaas.android:upgrade'
     implementation 'com.mpaas.android:scan'
@@ -128,6 +128,7 @@ dependencies {
 
     testCompileOnly 'org.projectlombok:lombok:1.18.12'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+    implementation 'com.mpaas.android:support'
 }
 
 uploadArchives {

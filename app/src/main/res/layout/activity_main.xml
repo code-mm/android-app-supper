@@ -18,10 +18,11 @@
     <com.alipay.mobile.antui.basic.AULinearLayout
         android:id="@+id/auLinearLayoutBottonNavigation"
         android:layout_width="match_parent"
-        android:layout_height="53dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <com.alipay.mobile.antui.bar.AUTabBarItem
             android:id="@+id/auTabBarItemMessage"
