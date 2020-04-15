@@ -1,5 +1,6 @@
 package com.ms.app.presenter.fragment;
 
+import com.bdlbsc.common.applets.AppletssResponse;
 import com.ms.app.model.fragment.ToolFragmentModel;
 import com.ms.app.view.fragment.IToolFragment;
 import com.ms.app.view.fragment.ToolFragment;
@@ -22,7 +23,12 @@ public class ToolFragmentPresenter extends BasePresenter<ToolFragmentModel, Tool
     }
 
     @Override
-    public void onRequestAppletsResultCallBack() {
-        view.onRequestAppletsResultCallBack();
+    public void onRequestAppletsResultCallBack(AppletssResponse response) {
+        view.onRequestAppletsResultCallBack(response);
+    }
+
+    @Override
+    public void warning(String text) {
+
     }
 }

@@ -38,30 +38,25 @@ public class ToolFragmentModel extends BaseModel<ToolFragmentPresenter> implemen
                 .subscribe(new Observer<AppletssResponse>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-
                     }
 
                     @Override
                     public void onNext(AppletssResponse appletssResponse) {
-
-
-
+                        onRequestAppletsResultCallBack(appletssResponse);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-
                     }
 
                     @Override
                     public void onComplete() {
-
                     }
                 });
     }
 
     @Override
-    public void onRequestAppletsResultCallBack() {
-
+    public void onRequestAppletsResultCallBack(AppletssResponse response) {
+        presenter.onRequestAppletsResultCallBack(response);
     }
 }
