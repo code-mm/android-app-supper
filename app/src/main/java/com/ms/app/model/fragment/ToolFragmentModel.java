@@ -10,7 +10,6 @@ import com.ms.app.view.fragment.IToolFragment;
 import org.ms.module.base.module.BaseModel;
 
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -22,18 +21,13 @@ public class ToolFragmentModel extends BaseModel<ToolFragmentPresenter> implemen
 
     public ToolFragmentModel(ToolFragmentPresenter presenter) {
         super(presenter);
-
     }
-
 
     @Override
     public void requestApplets() {
-
-
         AppletssRequest request = AppletssRequest.builder().user_id("").build();
         appletsRequestServer.applets(request)
                 .subscribeOn(Schedulers.io())
-
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<AppletssResponse>() {
                     @Override
@@ -47,6 +41,7 @@ public class ToolFragmentModel extends BaseModel<ToolFragmentPresenter> implemen
 
                     @Override
                     public void onError(Throwable e) {
+                        presenter.showToast(e.getMessage());
                     }
 
                     @Override

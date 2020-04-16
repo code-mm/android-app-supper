@@ -38,9 +38,9 @@ public class SplashActivity extends BaseAppCompatActivity {
         Modules.getControlSwitch().setPrintStackTrace(true);
         Modules.getControlSwitch().setRequestLog(true);
         Modules.getRequestSettingModule().setRequestLogOut(true);
-        Modules.getRequestSettingModule().setConnectTimeout(30);
-        Modules.getRequestSettingModule().setReadTimeout(30);
-        Modules.getRequestSettingModule().setWriteTimeout(30);
+        Modules.getRequestSettingModule().setConnectTimeout(60);
+        Modules.getRequestSettingModule().setReadTimeout(60);
+        Modules.getRequestSettingModule().setWriteTimeout(60);
 
         String url = Modules.getUtilsModule().getApkUtils().getMeta("com.bdlbsc.base.server");
 

@@ -21,8 +21,7 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <com.alipay.mobile.antui.bar.AUTabBarItem
             android:id="@+id/auTabBarItemMessage"
@@ -51,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:text="工具"
+            android:text="购物车"
             app:textColor="@color/color_update_333333"
             app:topIconSid="@drawable/tab_bar_shopping_cart" />
 
@@ -62,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:text="工具"
+            android:text="我的"
             app:textColor="@color/color_update_333333"
             app:topIconSid="@drawable/tab_bar_my" />
 

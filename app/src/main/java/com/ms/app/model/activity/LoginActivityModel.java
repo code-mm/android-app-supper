@@ -38,26 +38,20 @@ public class LoginActivityModel extends BaseModel<LoginActivityPresenter> implem
                     @Override
                     public void onNext(UserLoginUsernameResponse userLoginUsernameResponse) {
 
-
                         String access_token = userLoginUsernameResponse.getAccess_token();
                         String refresh_token = userLoginUsernameResponse.getRefresh_token();
-
                         Modules.getDataModule().getUserData().setUsername(username);
                         Modules.getDataModule().getUserData().setPassword(password);
                         Modules.getDataModule().getUserData().setAccessToken(access_token);
                         Modules.getDataModule().getUserData().setRefreshToken(refresh_token);
-
-
                     }
 
                     @Override
                     public void onError(Throwable e) {
-
                     }
 
                     @Override
                     public void onComplete() {
-
                     }
                 });
     }

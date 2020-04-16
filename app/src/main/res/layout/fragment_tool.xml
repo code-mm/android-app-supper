@@ -33,16 +33,16 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayoutAd"
-        android:layout_below="@id/relativeLayoutHeader"
         android:layout_width="match_parent"
-        android:layout_height="150dp"/>
+        android:layout_height="150dp"
+        android:layout_below="@id/relativeLayoutHeader" />
 
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerViewApplets"
-        android:layout_below="@id/relativeLayoutAd"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/relativeLayoutAd" />
 
 
 </RelativeLayout>
