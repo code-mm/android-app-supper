@@ -8,55 +8,103 @@
     tools:context=".view.activity.MainActivity">
 
 
-    <ImageView
-        android:id="@+id/imageViewLogo"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/image_login_logo" />
-
-
-    <TextView
-        android:id="@+id/textViewWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imageViewLogo"
-        android:text="欢迎您" />
-
-
-    <TextView
-        android:id="@+id/textViewServerPlatformName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewWelcome"
-        android:text="北斗智慧养老公共服务平台" />
-
-
     <RelativeLayout
-        android:id="@+id/relativeLayoutUsername"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewServerPlatformName" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="100dp">
+
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/image_login_logo" />
 
 
-    <RelativeLayout
-        android:id="@+id/relativeLayoutPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/relativeLayoutUsername" />
+        <TextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageViewLogo"
+            android:layout_marginTop="10dp"
+            android:text="欢迎您" />
 
 
-    <RelativeLayout
-        android:id="@+id/relativeLayoutForgetPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/relativeLayoutPassword" />
+        <TextView
+            android:id="@+id/textViewServerPlatformName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewWelcome"
+            android:layout_marginTop="10dp"
+            android:text="北斗智慧养老公共服务平台" />
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/relativeLayoutForgetPassword"
-        android:text="登录" />
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/relativeLayoutUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewServerPlatformName">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="用户名" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relativeLayoutUsername"
+            android:layout_marginTop="10dp">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="密码" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/relativeLayoutForgetPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relativeLayoutPassword"
+            android:layout_marginTop="10dp">
+
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/image_forget_password" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="忘记密码" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relativeLayoutForgetPassword"
+            android:text="登录" />
+
+
+    </RelativeLayout>
 
 
     <LinearLayout
