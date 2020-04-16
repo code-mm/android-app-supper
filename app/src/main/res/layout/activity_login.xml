@@ -1,42 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/image_main_background"
     android:orientation="vertical"
     tools:context=".view.activity.MainActivity">
 
 
-    <com.alipay.mobile.antui.input.AUImageInputBox
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/image_login_logo" />
+
+
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewLogo"
+        android:text="欢迎您" />
+
+
+    <TextView
+        android:id="@+id/textViewServerPlatformName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewWelcome"
+        android:text="北斗智慧养老公共服务平台" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutUsername"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        app:inputHint="请输入账号"
-        app:maxLength="20" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewServerPlatformName" />
 
 
-    <com.alipay.mobile.antui.input.AUImageInputBox
+    <RelativeLayout
+        android:id="@+id/relativeLayoutPassword"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        app:inputHint="请输入密码"
-        app:inputType="textPassword"
-        app:maxLength="6" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeLayoutUsername" />
 
 
-    <com.alipay.mobile.antui.basic.AUButton
-        android:id="@+id/auButtonLogin"
-        style="@style/mainButtonStyle"
+    <RelativeLayout
+        android:id="@+id/relativeLayoutForgetPassword"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="20dp"
-        android:clickable="true"
-        android:padding="10dp"
-        android:text="登录"
-        android:textSize="20sp" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeLayoutPassword" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeLayoutForgetPassword"
+        android:text="登录" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你还没有账号" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
